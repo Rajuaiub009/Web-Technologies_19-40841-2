@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+        <style>
+                h2{
+                        text-align: center;
+                }
+                body{
+                        text-align: center;
+                }
+        </style>
+        <script>  
+		function validateform(){  
+		var username=document.myform.username.value;  
+		var password=document.myform.password.value;  
+                if (username==null || username==""){  
+		  alert("Username can't be blank");  
+		  return false;  
+                  
+		  
+		}else if(password.length<6){  
+		  alert("Password must be at least 6 characters long.");  
+		  return false;  
+		  }  
+		}
+		function checkUsername() {
+			if (document.getElementById("username").value == "") {
+			  	document.getElementById("usernameErr").innerHTML = "username can't be blank";
+			  	document.getElementById("username").style.borderColor = "red";
+			}else{
+			  	document.getElementById("usernameErr").innerHTML = "";
+			  	document.getElementById("username").style.borderColor = "black";
+
+			}			
+        }
+        function checkPass(){
+        	if (document.getElementById("password").value == "") {
+			  	document.getElementById("passErr").innerHTML = "Password can't be blank";
+			  	document.getElementById("password").style.borderColor = "red";
+			}else{
+				document.getElementById("passErr").innerHTML = "";
+			  	document.getElementById("password").style.borderColor = "black";
+			}
+        }
+		  
+</script>
+</head>
+
+<body>
+<br> <br> 
+<h2> Login Page </h2>
+<br>
+<form name="myform" method="post" action="" onsubmit="return validateform()">  
+
+Username: 
+<input type="text" name="username" id="username" onblur="checkUserame()" onkeyup="checkUsername()"> 
+<p id="usernameErr"></p>
+<br/>  
+
+Password: <input type="password" id="password" name="password" onblur="checkPass()">
+<p id="passErr"></p>
+<br/>  
+
+<input type="submit" value="Login"> 
+</form>
+
+  </body>
+  </html> 

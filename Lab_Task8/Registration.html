@@ -1,0 +1,154 @@
+
+<!DOCTYPE HTML>  
+<html>
+     <head>
+          <style>
+               h2{
+                    text-align: center;
+               }
+               body{
+                    text-align: center;
+               }
+          </style>
+          <script>
+               function validateform(){
+          var firstname=document.myform.username.value;  
+          var lastname=document.myform.username.value;    
+          var username=document.myform.username.value;  
+          var password=document.myform.username.value;   
+          var retypepassword=document.myform.username.value;
+
+          if (firstname==null || firstname==""){  
+		  alert("Firstname can't be blank");  
+		  return false;  
+          }
+
+          else if (lastname==null || lastname==""){  
+		  alert("Lastname can't be blank");  
+		  return false;  
+          }
+
+         else if (username==null || username==""){  
+		  alert("Username can't be blank");  
+		  return false;  
+          }
+
+          else if(password.length<6){  
+		  alert("Password must be at least 6 characters long.");  
+		  return false;  
+		  }  
+     }
+
+          function checkFirstname(){
+               if(document.getElementById("firstname").value == ""){
+               document.getElementById("firstnameErr").innerHTML = "firstname can't be blank";
+               document.getElementById("firstname").style.borderColor = "red";
+
+               }
+               else{
+			  	document.getElementById("firstnameErr").innerHTML = "";
+			  	document.getElementById("firstname").style.borderColor = "black";
+               }
+
+          }
+
+          function checkLastname(){
+               if(document.getElementById("lastname").value == ""){
+               document.getElementById("lastnameErr").innerHTML = "Lastname can't be blank";
+               document.getElementById("lastname").innerHTML = "firstname can't be blank";
+
+               }
+               else{
+			  	document.getElementById("lastnameErr").innerHTML = "";
+			  	document.getElementById("lastname").style.borderColor = "black";
+               }
+
+          }
+          function checkUsername() {
+			if (document.getElementById("username").value == "") {
+			  	document.getElementById("usernameErr").innerHTML = "username can't be blank";
+			  	document.getElementById("username").style.borderColor = "red";
+			}else{
+			  	document.getElementById("usernameErr").innerHTML = "";
+			  	document.getElementById("username").style.borderColor = "black";
+
+			}
+          }
+
+               function checkPass(){
+        	if (document.getElementById("password").value == "") {
+			  	document.getElementById("passErr").innerHTML = "Password can't be blank";
+			  	document.getElementById("password").style.borderColor = "red";
+			}else{
+				document.getElementById("passErr").innerHTML = "";
+			  	document.getElementById("password").style.borderColor = "black";
+			}
+        }
+			
+		
+          </script>
+     </head>
+<body>
+
+     <form name="myform" method="post" action="" onsubmit="return validateform()">  
+
+    <br>
+    <h2> Registration Page </h2>
+    <br>
+  Firstname: <br> 
+  <input type="text" name="firstname" id="firstname" onblur="checkFirstname()" onkeyup="checkFirstname()">
+  <p id="firstnameErr"></p>
+
+  <br>
+
+  LastName: <br> 
+  <input type="text" name="lastname" id="lastname" onblur="checkLastname()" onkeyup="checkLastname()">
+  <p id="lastnameErr"></p>
+ 
+  <br> <br>
+
+  Email: <br>
+  <input type="text" name="email" id = "email">
+  
+  <br> <br>
+
+  Username: <br> 
+  <input type="text" name="username" id="username" onblur="checkUserame()" onkeyup="checkUsername()"> 
+  <p id="usernameErr"></p>
+  <br> 
+
+  Password: <br>
+  <input type="password" id="password" name="password" onblur="checkPass()">
+<p id="passErr"></p>
+
+  <br> 
+
+  Retype Password: <br>
+  <input type="password" name="retypepassword" id="retypepassword">
+  <br> <br>
+
+
+  Gender: 
+  <input type="radio" name="g" id = "g"  value="male"> Male
+  <input type="radio" name="g" id = "g"  value="female"> Female
+  <input type="radio" name="g" id = "g" value="other"> Other  
+ 
+  <br> <br>
+
+  Date of birth:
+  <input type="date" name="dob" >
+
+  <br> <br>
+
+  <input type="submit" name ="submit"value = "Register"> <br> <br>
+  
+
+
+  </body>
+
+  </html>
+
+
+
+
+

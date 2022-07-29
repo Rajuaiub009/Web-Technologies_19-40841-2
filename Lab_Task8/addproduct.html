@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+     <style>
+          h2 {
+               color: rgb(0, 0, 0);
+               text-align: center;
+          }
+          body{
+               text-align: center;
+          }
+     </style>
+     <script>
+          function validateform(){  
+		var productname=document.myform.productname.value;  
+
+		// var productcategory=document.myform.productcategory.value; 
+
+          // var productprice=document.myform.productprice.value;
+
+          if (productname==null || productname==""){  
+		  alert("Product name can't be empty");  
+		  return false;  
+          }
+     }
+
+          function checkProductname() {
+			if (document.getElementById("productname").value == "") {
+			  	document.getElementById("productnameErr").innerHTML = "Productname can't be Empty";
+			  	document.getElementById("productname").style.borderColor = "red";
+			}else{
+			  	document.getElementById("productnameErr").innerHTML = "";
+			  	document.getElementById("productname").style.borderColor = "black";
+			}		
+        }
+     
+</script>
+</head>
+
+<body>
+      
+<h2> ADD PRODUCT </h2>
+<form name="myform" method="post" action="" onsubmit="return validateform()" >  
+Product Name:  
+<br>
+<input type="text" name="productname" id="productname" onblur="checkProductname()" onkeyup="checkProductname()"> 
+<p id="productnameErr"></p>
+
+<br> 
+
+Product Category:
+<input type="radio" name="pc" id = "pc" value="mobile"> Mobiles
+  <input type="radio" name="pc" id = "pc" value="electronics">Electronics
+  <input type="radio" name="pc" id = "pc" value="other">Others  
+  <br><br>
+
+Product Price: <br>
+<input type="text" name="productprice" id="productprice"> 
+<br> <br>
+<input type="submit" name="submit" value="Append"> <br><br>
+
+  </body>
+  </html>
+ 
