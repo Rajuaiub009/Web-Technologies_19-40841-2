@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h2{
+                background-color: cadetblue;
+                text-align: center;
+                color: darkblue;
+              
+            }
+            body{
+                text-align: center;
+                color: black;
+            }
+        </style>
+    <script>  
+function getbmivalue(){
+            var height = document.getElementById('height').value;
+            var weight = document.getElementById('weight').value;
+
+            height = height * 12;
+            height = height * 0.025;
+            var newbmivalue = weight / (height * height);
+
+            document.getElementById('bmivalue').value = newbmivalue;          
+}
+</script> 
+</head>
+
+<body>
+    <h2>BMI CALCULATOR</h2>
+    <form onsubmit=" getbmivalue()">
+        <div class="form-group">
+            <label>Enter your Weight</label>  <br>
+             <input type="number"  name ="" id="weight" class ="form-control" >
+            </div>
+            <br> 
+    
+        <div class="form-group">
+            Enter your Height <br>
+         <input type="number" name="" id ="height" class ="form-control">
+        </div>
+        <br> 
+        
+        <div class="form-group">
+            BMI Value <br>
+        <input type="number" name="" id ="bmivalue" class="form-control">  
+        </div>
+        <div> <br>
+            <button type="submit" class="btn btn-success" onclick ="getbmivalue()">Check BMI</button>
+
+            <p> A healthy BMI ranges between 19 and 25</p>
+        </form>
+        </div>
+
+</body>
+</html>
